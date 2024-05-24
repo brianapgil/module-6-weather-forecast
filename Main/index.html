@@ -17,21 +17,34 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-3">
+      <div class="col-2">
         <form id="search-form" class="form w-100">
           <input id="search-input" class="form-input w-100" type="text" placeholder="Search for a city">
-          <button class="btn btn-info btn-block">Enter</button>
+          <button class="btn btn-info btn-block custom-btn">Enter</button>
         </form>
+        <div>
+          <h2>Search History</h2>
+          <div id="search-history"></div>
+        </div>
       </div>
-      <div class="col-9">
-        <div id="today">Today card goes here</div>
-        <div id="forecast">Forecast card goes here</div>
+      <div class="col-10">
+        <div class="row">
+          <div id="today" class="col-12"></div>
+        </div>
+        <div id="forecast" class="row">
+          <div id="day-1" class="col-2" class="forecast"></div>
+          <div id="day-2" class="col-2" class="forecast"></div>
+          <div id="day-3" class="col-2" class="forecast"></div>
+          <div id="day-4" class="col-2" class="forecast"></div>
+          <div id="day-5" class="col-2" class="forecast"></div>
+        </div>
       </div>
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 

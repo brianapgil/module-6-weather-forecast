@@ -1,0 +1,16 @@
+#today {
+    border: solid 1px black;
+}
+
+#forecast {
+    border: solid 1px black;
+}
+
+h2 {
+    font-size: larger;
+}
+
+.custom-btn {
+    margin: 5px;
+    width: 110px
+}
