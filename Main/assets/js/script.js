@@ -31,7 +31,7 @@ function handleSearchFormSubmit(event) {
 }
 
 // Function to get coordinates of city entered using API
-function getCoords(searchInputVal) {
+function getCoords() {
   const city = searchInputVal.value;
   console.log(city);
   const apiUrlCoords = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`
@@ -246,15 +246,15 @@ function renderWeatherForecast() {
 function searchHistory() {
   $("#search-history").html("");
   for (const c of city) {
-    const searchHistoryCity = $("<button>").text(c).addClass("btn btn-info btn-block custom-btn");
+    const searchHistoryCity = $("<button>");
+    searchHistoryCity.text(c).addClass("btn btn-info btn-block custom-btn");
     $("#search-history").append(searchHistoryCity);
+    searchHistoryCity.on('click', function (event) {
+      event.preventDefault();
+      $("#search-input").val(c);
+      getCoords(c); 
+    });
   }
-  
-}
-
-function searchHistoryButton(){
-
 }
 
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);
-searchHistoryCity.addEventListener('click', searchHistoryButton);
